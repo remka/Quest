@@ -16,10 +16,10 @@ html, body {
   height: 100%;
   position: relative;
   overflow: hidden;
-  font-family: 'Helvetica', Arial, Sans;
+  font-family: 'Hello', Arial, Sans;
   font-weight: normal;
   font-style: normal;
-  background: #1e4882;
+  background: #333;
   font-size: 16px;
   line-height: 24px;
   text-rendering: optimizeLegibility;
@@ -80,6 +80,7 @@ html, body {
   top: 0;
   width: 100%;
   height: 70%;
+  /* background: red; */
 }
 
 #event .visual .inner{
@@ -88,24 +89,29 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
-  background: #82b6ff;
+  background: #666;
   height: 100px;
+  /*
+  border: 4px solid #222;
   border-radius: 50%;
+  */
 }
 
 #event .description {
-  top: 70%;
+  /* top: 70%; */
   position: relative;
   height: 30%;
+  width: 70%;
+  margin: auto;
 }
 
 #event .description p{
-  margin: 30px;
-  text-align: center;
+  margin: 30px auto;
+  text-align: left;
   color: #fff;
-  font-size: 24px;
-  line-height: 1.5em;
-  text-shadow: 0 2px 0 #0d2648;
+  font-size: 26px;
+  line-height: 24px;
+  text-shadow: 0 4px 0 #000;
 }
 
 #exits {
@@ -139,11 +145,12 @@ html, body {
   cursor: pointer;
   width: 49%;
   bottom: -20%;
-  background: #497ec7;
+  background: #444;
   font-size: 20px;
-  text-shadow: 0 2px 0 #1e4882;
+  line-height: 20px;
+  text-shadow: 0 3px 0 #000;
   box-shadow:
-    inset 0 3px 0 #6196e0;
+    inset 0 4px 0 #555;
 }
 
 #exits li:nth-child(even) {

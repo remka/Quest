@@ -47,7 +47,9 @@ var questModule = (function() {
   var $eventVisual = $('#event .visual');
   var $eventDescr = $('#event .description');
   var $eventExits = $('#exits');
+  var $eventVisual = $('#event .visual');
   var $eventVisualInner = $('#event .visual .inner');
+  var $eventDescription = $('#event .description');
 
   function whichTransitionEvent(){
     var t,
@@ -72,6 +74,8 @@ var questModule = (function() {
   function resizeVisual() {
     var w = $eventVisualInner.width();
     $eventVisualInner.height(w);
+    var h = $eventVisual.height();
+    $eventDescription.css('top', h + 'px');
   }
 
   function updateDay() {
