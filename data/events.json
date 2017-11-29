@@ -1,0 +1,530 @@
+{
+  "events": [
+    {
+      "id": 567,
+      "description": "You just found a wallet on the street.",
+      "visual": "Wallet visual",
+      "probability": 1,
+      "isTimeline": 1,
+      "isUnique": 0,
+      "need": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Bring it back to a police station",
+          "money": 2000,
+          "tatemae": 15,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 568,
+          "winLose": 0
+        },
+        {
+          "title": "Keep it to yourself",
+          "money": 10000,
+          "tatemae": -10,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 569,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 568,
+      "description": "The police thank you, and give you a reward.",
+      "visual": "reward",
+      "probability": 0,
+      "isTimeline": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Yay!",
+          "money": 0,
+          "tatemae": 2,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 568,
+      "description": "You were out drinking with your friends, and your missed the last train.",
+      "visual": "last-train",
+      "probability": 3,
+      "isTimeline": 1,
+      "isUnique": 0,
+      "need": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Walk home",
+          "money": 0,
+          "tatemae": 10,
+          "ninki": -10,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        },
+        {
+          "title": "Take a taxi",
+          "money": -3000,
+          "tatemae": 0,
+          "ninki": 10,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 569,
+      "description": "You start to feel guilty.",
+      "visual": "guilt",
+      "isTimeline": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "OK, I give it back.",
+          "money": 1000,
+          "tatemae": 10,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 568,
+          "winLose": 0
+        },
+        {
+          "title": "I need that money.",
+          "money": 0,
+          "tatemae": -10,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 570,
+      "description": "That girl at the grocery store looks really cute.",
+      "visual": "cute-girl",
+      "probability": 1,
+      "isTimeline": 1,
+      "isUnique": 0,
+      "need": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Try to make a joke",
+          "money": 0,
+          "tatemae": 0,
+          "ninki": 10,
+          "alcool": 0,
+          "goTo": 571,
+          "winLose": 0
+        },
+        {
+          "title": "Do nothing",
+          "money": 10000,
+          "tatemae": 10,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 571,
+      "description": "She tries to smile, but looks a bit scared too.",
+      "visual": "cute-girl-shy",
+      "probability": 1,
+      "isTimeline": 0,
+      "isUnique": 0,
+      "need": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Ask for her number",
+          "money": 0,
+          "tatemae": 0,
+          "ninki": 15,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose":  {
+            "win": 572,
+            "lose": 573
+          }
+        },
+        {
+          "title": "Give up",
+          "money": 0,
+          "tatemae": 5,
+          "alcool": 0,
+          "ninki": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 572,
+      "description": "She writes it on a piece of paper and give it to you discretely.",
+      "visual": "default",
+      "isTimeline": 0,
+      "unlocks": "girlNumber",
+      "exits": [
+        {
+          "title": "Woohoo!",
+          "money": 0,
+          "tatemae": 0,
+          "ninki": 10,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 573,
+      "description": "She calls her manager who asks you to leave if you don't want him to call the cops.",
+      "visual": "default",
+      "isTimeline": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Leave the conbini",
+          "money": 0,
+          "tatemae": -10,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 574,
+      "description": "You decide to contact that girl who gave you her number the other day.",
+      "visual": "phone",
+      "probability": 3,
+      "isTimeline": 1,
+      "isUnique": 0,
+      "need": "girlNumber",
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "You call her",
+          "money": 0,
+          "tatemae": 0,
+          "ninki": 10,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        },
+        {
+          "title": "You text her",
+          "money": 0,
+          "tatemae": 0,
+          "ninki": 5,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 800,
+      "description": "You an old stealing food in your conbini.",
+      "visual": "baba",
+      "probability": 1,
+      "isTimeline": 1,
+      "isUnique": 0,
+      "need": "conbini",
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Pretend you did not see her",
+          "money": 0,
+          "tatemae": 0,
+          "alcool": 0,
+          "ninki": 10,
+          "goTo": 0,
+          "winLose": 0
+        },
+        {
+          "title": "Tell your boss to call the cops",
+          "money": 10000,
+          "tatemae": 10,
+          "alcool": 0,
+          "ninki": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 802,
+      "description": "You spot a job offer at the conbini next to your place. No experience is required.",
+      "visual": "baba",
+      "probability": 3,
+      "isTimeline": 1,
+      "isUnique": 0,
+      "need": "noJob",
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Ask them to get an interview",
+          "money": 0,
+          "tatemae": 0,
+          "alcool": 0,
+          "ninki": 10,
+          "goTo": 0,
+          "winLose": 0
+        },
+        {
+          "title": "No way I work in a conbini",
+          "money": 10000,
+          "tatemae": 10,
+          "alcool": 0,
+          "ninki": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 900,
+      "description": "The cops pull you aside to see your ID.",
+      "visual": "cops",
+      "probability": 2,
+      "isTimeline": 1,
+      "isUnique": 0,
+      "need": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "You show your ID",
+          "money": 0,
+          "tatemae": 5,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 901,
+          "winLose": 0
+        },
+        {
+          "title": "Fuck you!",
+          "money": 0,
+          "tatemae": -5,
+          "ninki": 5,
+          "alcool": 0,
+          "goTo": 902,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 901,
+      "description": "They now want to see the inside of your bag.",
+      "visual": "cops",
+      "isTimeline": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Sure, no problem!",
+          "money": 0,
+          "tatemae": 10,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 903,
+          "winLose": 0
+        },
+        {
+          "title": "Fuck you!",
+          "money": 0,
+          "tatemae": -10,
+          "ninki": 5,
+          "alcool": 0,
+          "goTo": 902,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 902,
+      "description": "The cops take you to the police station. They threaten to deport you next time.",
+      "visual": "police-station",
+      "isTimeline": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Pay the fine.",
+          "money": -2000,
+          "tatemae": 0,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 903,
+      "description": "They let you go. For this time...",
+      "visual": "police-station",
+      "isTimeline": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Pfew.",
+          "money": 0,
+          "tatemae": 0,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 1000,
+      "description": "The train you took is super crowded, and an old guy steps on your foot.",
+      "visual": "train-crowded",
+      "probability": 9,
+      "isTimeline": 1,
+      "isUnique": 0,
+      "need": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Pretend nothing happened",
+          "money": 0,
+          "tatemae": 1,
+          "ninki": -2,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        },
+        {
+          "title": "Fart discretely",
+          "money": 0,
+          "tatemae": -1,
+          "ninki": 2,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 1000,
+      "description": "The land lady complains that you mixed burnable trash with not-burnable trash.",
+      "visual": "train-crowded",
+      "probability": 8,
+      "isTimeline": 1,
+      "isUnique": 0,
+      "need": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Apologize profusely",
+          "money": 0,
+          "tatemae": 10,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        },
+        {
+          "title": "Pretend you don't understand",
+          "money": 0,
+          "tatemae": -10,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 1100,
+      "description": "It starts to rain, and your realize that don't have any umbrella.",
+      "visual": "rain-start",
+      "probability": 8,
+      "isTimeline": 1,
+      "isUnique": 0,
+      "need": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Steal one in a conbini",
+          "money": 0,
+          "tatemae": -10,
+          "ninki": 5,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose":  {
+            "win": 100,
+            "lose": 56
+          }
+        },
+        {
+          "title": "It's just water. Ignore it.",
+          "money": 0,
+          "tatemae": 10,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    }
+  ],
+  "intro": [
+    {
+      "id": 1,
+      "description": "After a very long flight, your plane finally lands at Narita airport. You breathe trough immigration, pickup your luggage, and head for the train station.",
+      "visual": "narita",
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Take express train",
+          "money": -2000,
+          "tatemae": 0,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 2,
+          "winLose": 0
+        },
+        {
+          "title": "Take normal train",
+          "money": -500,
+          "tatemae": 0,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 50,
+          "winLose": 0
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "description": "You finally arrive to your guesthouse. It's dark, and you fall asleep instantly.",
+      "visual": "guesthouse",
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Zzzzz...",
+          "money": 0,
+          "tatemae": 0,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": "startGame",
+          "winLose": 0
+        }
+      ]
+    }
+  ]
+}
