@@ -17,6 +17,7 @@ var questModule = (function() {
   var spriteWidth = 600;
   var visualWidth;
   var spriteDimensions = [];
+  var textTopPadding = 30;
 
   var userStats = {
     money: 50000,
@@ -83,7 +84,7 @@ var questModule = (function() {
     var bgH = w*imagesH;
     visualWidth = w;
     $eventVisualInner.height(w);
-    var h = $eventVisual.height() - 50;
+    var h = $eventVisual.height() - textTopPadding;
     $eventDescription.css('top', h + 'px');
     $eventIllu.css('background-size', bgW + 'px ' + bgH + 'px');
   }
@@ -153,13 +154,12 @@ var questModule = (function() {
   }
 
   function swapVisual(visualObj) {
-    console.log(visualObj);
     var posX, posY;
     // change BG color
     $eventVisualInner.css('background', visualObj.bg);
+    // move spritesheet
     var posX = visualObj.coords[0] * visualWidth;
     var posY = visualObj.coords[1] * visualWidth;
-    console.log(posX + ' | ' + posY);
     $eventIllu.css('background-position', '-' + posX + 'px ' + '-' + posY + 'px');
   }
 
@@ -169,11 +169,6 @@ var questModule = (function() {
 
     var exitStyle;
     var linkString;
-    var visual;
-
-    // retrieve visual for event
-    visual = returnVisualByName(eventObj.visual);
-    swapVisual(visual);
 
     // update unlocked
     if(eventObj.unlocks != 0) {
@@ -190,6 +185,7 @@ var questModule = (function() {
       'easeInCubic',
       300,
       function() {
+        $eventIllu.velocity({ bottom: 0 }, 300);
         $eventDescr.html('<p>' + eventObj.description + '</p>');
         if(eventObj.exits.length < 2) {
           $eventExits.removeClass('single double').addClass('single');
@@ -245,12 +241,15 @@ var questModule = (function() {
   }
 
   function showEvent(eventObj) {
+    var visual = returnVisualByName(eventObj.visual);
     $eventExits.velocity({
       bottom:'-180px'
     }, 'easeInCubic', 300, function() {
       refreshEvent(eventObj);
+      swapVisual(visual);
     });
     $eventDescr.velocity({ opacity: 0 }, 300);
+    $eventIllu.velocity({ bottom: '-100%' }, 300);
   }
 
   function updateStats(stMoney, stTatemae, stNinki, stAlcool) {

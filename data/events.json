@@ -33,7 +33,7 @@
     {
       "id": 568,
       "description": "The police thank you, and give you a reward.",
-      "visual": "test",
+      "visual": "onigiri",
       "probability": 0,
       "isTimeline": 0,
       "unlocks": 0,
@@ -52,7 +52,7 @@
     {
       "id": 568,
       "description": "You were out drinking with your friends, and your missed the last train.",
-      "visual": "test",
+      "visual": "ramen",
       "probability": 3,
       "isTimeline": 1,
       "isUnique": 0,
@@ -82,7 +82,7 @@
     {
       "id": 569,
       "description": "You start to feel guilty.",
-      "visual": "test",
+      "visual": "onigiri",
       "isTimeline": 0,
       "unlocks": 0,
       "exits": [
@@ -109,7 +109,7 @@
     {
       "id": 570,
       "description": "That girl at the grocery store looks really cute.",
-      "visual": "test",
+      "visual": "conbini-girl",
       "probability": 1,
       "isTimeline": 1,
       "isUnique": 0,
@@ -172,7 +172,7 @@
     {
       "id": 572,
       "description": "She writes it on a piece of paper and give it to you discretely.",
-      "visual": "test",
+      "visual": "conbini-girl",
       "isTimeline": 0,
       "unlocks": "girlNumber",
       "exits": [
@@ -238,7 +238,7 @@
     {
       "id": 800,
       "description": "You an old stealing food in your conbini.",
-      "visual": "test",
+      "visual": "onigiri",
       "probability": 1,
       "isTimeline": 1,
       "isUnique": 0,
@@ -268,7 +268,7 @@
     {
       "id": 802,
       "description": "You spot a job offer at the conbini next to your place. No experience is required.",
-      "visual": "test",
+      "visual": "ramen",
       "probability": 3,
       "isTimeline": 1,
       "isUnique": 0,
@@ -298,7 +298,7 @@
     {
       "id": 900,
       "description": "The cops pull you aside to see your ID.",
-      "visual": "test",
+      "visual": "onigiri",
       "probability": 2,
       "isTimeline": 1,
       "isUnique": 0,
@@ -328,7 +328,7 @@
     {
       "id": 901,
       "description": "They now want to see the inside of your bag.",
-      "visual": "test",
+      "visual": "onigiri",
       "isTimeline": 0,
       "unlocks": 0,
       "exits": [
@@ -373,7 +373,7 @@
     {
       "id": 903,
       "description": "They let you go. For this time...",
-      "visual": "test",
+      "visual": "onigiri",
       "isTimeline": 0,
       "unlocks": 0,
       "exits": [
@@ -391,7 +391,7 @@
     {
       "id": 1000,
       "description": "The train you took is super crowded, and an old guy steps on your foot.",
-      "visual": "test",
+      "visual": "onigiri",
       "probability": 9,
       "isTimeline": 1,
       "isUnique": 0,
@@ -451,7 +451,7 @@
     {
       "id": 1100,
       "description": "It starts to rain, and your realize that don't have any umbrella.",
-      "visual": "test",
+      "visual": "ramen",
       "probability": 8,
       "isTimeline": 1,
       "isUnique": 0,
@@ -512,7 +512,7 @@
     {
       "id": 50,
       "description": "You finally arrive to your guesthouse. It's dark, and you fall asleep instantly.",
-      "visual": "test",
+      "visual": "onigiri",
       "unlocks": 0,
       "exits": [
         {

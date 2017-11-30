@@ -97,6 +97,7 @@ html, body {
   border-radius: 50%;
   overflow: hidden;
   transition: all 0.3s ease; /* for color switch */
+  border: 10px solid #151515;
 }
 
 #event .visual .inner .illu{
@@ -119,9 +120,9 @@ html, body {
 #event .description p{
   margin: 30px auto;
   text-align: center;
-  color: #fff;
-  font-size: 24px;
-  line-height: 36px;
+  color: #eee;
+  font-size: 20px;
+  line-height: 30px;
   text-shadow: 0 4px 0 #000;
 }
 
