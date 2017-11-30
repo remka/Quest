@@ -19,7 +19,7 @@ html, body {
   font-family: 'Hello', Arial, Sans;
   font-weight: normal;
   font-style: normal;
-  background: #333;
+  background: url(../images/bg-01.png) repeat 0 0;
   font-size: 16px;
   line-height: 24px;
   text-rendering: optimizeLegibility;
