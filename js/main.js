@@ -2,6 +2,8 @@ var questModule = (function() {
 
   // data
   var dataEvents = 'events.json';
+  var dataVisuals = 'visuals.json';
+  var visualsSprite = 'sprite-01.png';
 
   // privates
   var hasStarted = false;
@@ -11,6 +13,10 @@ var questModule = (function() {
 
   var eventHistory = [];
   var maxEvents = 3;
+
+  var spriteWidth = 600;
+  var visualWidth;
+  var spriteDimensions = [];
 
   var userStats = {
     money: 50000,
@@ -36,6 +42,7 @@ var questModule = (function() {
 
   var introReference = [];
   var eventsReference = [];
+  var visualsReference = [];
 
   // Jquery aliases
   var $usrMoney = $('#usrMoney');
@@ -50,32 +57,34 @@ var questModule = (function() {
   var $eventVisual = $('#event .visual');
   var $eventVisualInner = $('#event .visual .inner');
   var $eventDescription = $('#event .description');
+  var $eventIllu = $('#event .visual .inner .illu');
 
-  function whichTransitionEvent(){
-    var t,
-        el = document.createElement("fakeelement");
-
-    var transitions = {
-      "transition"      : "transitionend",
-      "OTransition"     : "oTransitionEnd",
-      "MozTransition"   : "transitionend",
-      "WebkitTransition": "webkitTransitionEnd"
-    }
-
-    for (t in transitions){
-      if (el.style[t] !== undefined){
-        return transitions[t];
-      }
-    }
+  function setSpriteDimensions() {
+    var url = './images/illu/' + visualsSprite;
+    var bgImg = $('<img />');
+    bgImg.hide();
+    bgImg.bind('load', function() {
+        var height = $(this).height();
+        var width = $(this).width();
+        spriteDimensions[0] = width;
+        spriteDimensions[1] = height;
+        resizeVisual();
+    });
+    $('body').append(bgImg);
+    bgImg.attr('src', url);
   }
-
-  var transitionEvent = whichTransitionEvent();
 
   function resizeVisual() {
     var w = $eventVisualInner.width();
+    var imagesW = spriteDimensions[0]/spriteWidth;
+    var imagesH = spriteDimensions[1]/spriteWidth;
+    var bgW = w*imagesW;
+    var bgH = w*imagesH;
+    visualWidth = w;
     $eventVisualInner.height(w);
     var h = $eventVisual.height() - 50;
     $eventDescription.css('top', h + 'px');
+    $eventIllu.css('background-size', bgW + 'px ' + bgH + 'px');
   }
 
   function updateDay() {
@@ -142,10 +151,26 @@ var questModule = (function() {
     }
   }
 
+  function swapVisual(visualObj) {
+    console.log(visualObj);
+    var posX, posY;
+    // change BG color
+    $eventVisualInner.css('background', visualObj.bg);
+    //var spriteWidth = 600;
+    //var visualWidth;
+  }
+
   function refreshEvent(eventObj) {
+
     console.log(eventObj);
+
     var exitStyle;
     var linkString;
+    var visual;
+
+    // retrieve visual for event
+    visual = returnVisualByName(eventObj.visual);
+    swapVisual(visual);
 
     // update unlocked
     if(eventObj.unlocks != 0) {
@@ -204,6 +229,16 @@ var questModule = (function() {
         $eventDescr.velocity({ opacity: 1 }, 300);
       }
     );
+  }
+
+  function returnVisualByName(visualName) {
+    var visual = false;
+    for (var i = 0; i < visualsReference.length; i++) {
+      if(visualsReference[i].name == visualName) {
+        visual = visualsReference[i];
+      }
+    }
+    return visual;
   }
 
   function showEvent(eventObj) {
@@ -307,8 +342,14 @@ var questModule = (function() {
 
   function loadData() {
     $(function() {
+
       var c = Date.now();
+      console.log('Loading events data...');
+
       $.getJSON('./data/' + dataEvents + '?c=' + c, function(eventsArray) {
+
+        console.log('Events data loaded.');
+
         // events
         $.each(eventsArray.events, function(index, value) {
           eventsReference.push(eventsArray.events[index]);
@@ -317,7 +358,23 @@ var questModule = (function() {
         $.each(eventsArray.intro, function(index, value) {
           introReference.push(eventsArray.intro[index]);
         });
-        playIntro();
+
+        console.log('Loading visuals data...');
+
+        $.getJSON('./data/' + dataVisuals + '?c=' + c, function(visualsArray) {
+
+          console.log('Visuals data loaded.');
+
+          // intro
+          $.each(visualsArray.visuals, function(index, value) {
+            visualsReference.push(visualsArray.visuals[index]);
+          });
+
+          console.log(visualsReference);
+          playIntro();
+        });
+
+
       });
     });
   }
@@ -325,7 +382,7 @@ var questModule = (function() {
   return {
 
     getStarted: function() {
-      resizeVisual();
+      setSpriteDimensions();
       loadData();
       displayStats();
       $(window).resize(function() {

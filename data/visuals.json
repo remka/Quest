@@ -1,0 +1,14 @@
+{
+  "visuals": [
+    {
+      "name": "conbini-girl",
+      "bg": "#666",
+      "coords": [0,0]
+    },
+    {
+      "name": "test",
+      "bg": "#444",
+      "coords": [1,0]
+    }
+  ]
+}
