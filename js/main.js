@@ -60,7 +60,8 @@ var questModule = (function() {
   var $eventIllu = $('#event .visual .inner .illu');
 
   function setSpriteDimensions() {
-    var url = './images/illu/' + visualsSprite;
+    var c = Date.now();
+    var url = './images/illu/' + visualsSprite + '?c=' + c;
     var bgImg = $('<img />');
     bgImg.hide();
     bgImg.bind('load', function() {
@@ -156,8 +157,10 @@ var questModule = (function() {
     var posX, posY;
     // change BG color
     $eventVisualInner.css('background', visualObj.bg);
-    //var spriteWidth = 600;
-    //var visualWidth;
+    var posX = visualObj.coords[0] * visualWidth;
+    var posY = visualObj.coords[1] * visualWidth;
+    console.log(posX + ' | ' + posY);
+    $eventIllu.css('background-position', '-' + posX + 'px ' + '-' + posY + 'px');
   }
 
   function refreshEvent(eventObj) {
