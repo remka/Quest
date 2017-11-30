@@ -19,7 +19,7 @@ html, body {
   font-family: 'Helvetica', Arial, Sans;
   font-weight: normal;
   font-style: normal;
-  background: url(../images/bg-01.png) repeat 0 0;
+  background: url(../images/bg-02.png) repeat 50% 0;
   font-size: 16px;
   line-height: 24px;
   text-rendering: optimizeLegibility;
@@ -93,8 +93,8 @@ html, body {
   height: 100px;
   /*
   border: 4px solid #222;
-  border-radius: 50%;
   */
+  border-radius: 50%;
 }
 
 #event .description {

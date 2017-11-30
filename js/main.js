@@ -74,7 +74,7 @@ var questModule = (function() {
   function resizeVisual() {
     var w = $eventVisualInner.width();
     $eventVisualInner.height(w);
-    var h = $eventVisual.height();
+    var h = $eventVisual.height() - 50;
     $eventDescription.css('top', h + 'px');
   }
 
