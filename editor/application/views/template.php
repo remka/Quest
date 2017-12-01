@@ -25,6 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </button>
           <a class="navbar-brand" href="<?=base_url()?>">Editor</a>
         </div>
+				<!--
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="<?=base_url()?>">Dashboard</a></li>
@@ -36,6 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <input type="text" class="form-control" placeholder="Search...">
           </form>
         </div>
+				-->
       </div>
     </nav>
 
@@ -44,10 +46,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="<?=base_url()?>">Dashboard <span class="sr-only">(current)</span></a></li>
-            <li><a href="<?=base_url('intro')?>">Intro</a></li>
-            <li><a href="<?=base_url('events')?>">Events</a></li>
-            <li><a href="<?=base_url('visuals')?>">Visuals</a></li>
+            <li <?php if ($content == 'home') { echo 'class="active"'; } ;?>><a href="<?=base_url()?>">Dashboard <span class="sr-only">(current)</span></a></li>
+            <li <?php if ($content == 'intro') { echo 'class="active"'; } ;?>><a href="<?=base_url('intro')?>">Intro</a></li>
+            <li <?php if ($content == 'events') { echo 'class="active"'; } ;?>><a href="<?=base_url('events')?>">Events</a></li>
+            <li <?php if ($content == 'visuals') { echo 'class="active"'; } ;?>><a href="<?=base_url('visuals')?>">Visuals</a></li>
           </ul>
         </div>
 
