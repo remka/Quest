@@ -62,7 +62,7 @@ var questModule = (function() {
 
   function setSpriteDimensions() {
     var c = Date.now();
-    var url = './images/illu/' + visualsSprite + '?c=' + c;
+    var url = './images/' + visualsSprite + '?c=' + c;
     var bgImg = $('<img />');
     bgImg.hide();
     bgImg.bind('load', function() {
