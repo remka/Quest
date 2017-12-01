@@ -8,6 +8,31 @@ body {
 }
 
 
+/* visuals edit page */
+.list-visuals {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-visuals li {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 120px;
+  height: 120px;
+  background: #999;
+  margin: 0 20px 20px 0;
+  border-radius: 60px;
+  cursor: pointer;
+  background-image: url(./../../../images/sprite-01.png);
+}
+
+.list-visuals li span {
+  display: none;
+}
+
+
 /*
  * Global add-ons
  */
@@ -82,10 +107,4 @@ body {
 }
 .main .page-header {
   margin-top: 0;
-}
-
-/* main */
-.prewrap {
-  white-space: pre-wrap;
-  font-family: monospace;
 }

@@ -64,5 +64,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   crossorigin="anonymous"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" async defer></script>
 
+	<?php if ($content == 'visuals') { ?>
+		<script src="<?=public_url()?>js/visuals.js"></script>
+	<?php }; ?>
+
 </body>
 </html>
