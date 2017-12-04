@@ -50,7 +50,7 @@
       ]
     },
     {
-      "id": 568,
+      "id": 575,
       "description": "You were out drinking with your friends, and your missed the last train.",
       "visual": "ramen",
       "probability": 3,
@@ -419,7 +419,7 @@
       ]
     },
     {
-      "id": 1000,
+      "id": 1001,
       "description": "The land lady complains that you mixed burnable trash with not-burnable trash.",
       "visual": "conbini-girl",
       "probability": 8,

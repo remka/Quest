@@ -19,6 +19,8 @@
             <tr>
               <th>#</th>
               <th>Header</th>
+              <th><abbr title="Probability">P</abbr></th>
+              <th><abbr title="Exits">E</abbr></th>
             </tr>
           </thead>
 
@@ -27,6 +29,30 @@
               <tr>
                 <td><?=$event['id']?></td>
                 <td><?=limit_text($event['description'], 9)?></td>
+                <td>
+                  <?php if($event['isTimeline'] != 0) { ?>
+                    <?=$event['probability']?>
+                  <?php } else { ?>
+                    -
+                  <?php }; ?>
+                </td>
+                <td>
+                  <?php foreach ($event['exits'] as $exit):?>
+                    <?php
+                    $is_in_array = false;
+                    for ($x = 0; $x < count($events); $x++) {
+                      if($events[$x]['id'] == $exit['goTo']) {
+                        $is_in_array = true;
+                      };
+                    };
+                    if ($is_in_array == true && $exit['goTo'] != 0) { ?>
+                      <i class="fa fa-check" aria-hidden="true"></i>
+                    <?php } else if($is_in_array != true && $exit['goTo'] != 0) { ?>
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    <?php }; ?>
+                    <?=$exit['goTo']?>
+                  <?php endforeach;?>
+                </td>
               </tr>
             <?php endforeach;?>
           </tbody>
