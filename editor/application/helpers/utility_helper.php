@@ -16,3 +16,14 @@ if ( ! function_exists('limit_text()')) {
     return $text;
   }
 };
+
+if ( ! function_exists('random_num()')) {
+  function random_num() {
+    $part_1 = time();
+    $part_2 = 0;
+    for ($i = 1; $i <= 5; $i++) {
+      $part_2 .= rand(0,9);
+    }
+    return $part_1.$part_2;
+  }
+};

@@ -1,7 +1,7 @@
 {
   "events": [
     {
-      "id": 567,
+      "id": "5a267d64f1e67",
       "description": "You just found a wallet on the street.",
       "visual": "conbini-girl",
       "probability": 1,
@@ -16,7 +16,7 @@
           "tatemae": 15,
           "ninki": 0,
           "alcool": 0,
-          "goTo": 568,
+          "goTo": "5a267d8b13e1e",
           "winLose": 0
         },
         {
@@ -25,13 +25,13 @@
           "tatemae": -10,
           "ninki": 0,
           "alcool": 0,
-          "goTo": 569,
+          "goTo": "5a267dbbb13a5",
           "winLose": 0
         }
       ]
     },
     {
-      "id": 568,
+      "id": "5a267d8b13e1e",
       "description": "The police thank you, and give you a reward.",
       "visual": "onigiri",
       "probability": 0,
@@ -53,8 +53,8 @@
       "id": 666,
       "description": "Test",
       "visual": "onigiri",
-      "probability": 0,
-      "isTimeline": 0,
+      "probability": 2,
+      "isTimeline": 1,
       "unlocks": 0,
       "exits": [
         {
@@ -69,7 +69,7 @@
       ]
     },
     {
-      "id": 575,
+      "id": "5a2681cd31ca9",
       "description": "You were out drinking with your friends, and your missed the last train.",
       "visual": "ramen",
       "probability": 3,
@@ -99,7 +99,7 @@
       ]
     },
     {
-      "id": 569,
+      "id": "5a267dbbb13a5",
       "description": "You start to feel guilty.",
       "visual": "onigiri",
       "isTimeline": 0,
@@ -111,7 +111,7 @@
           "tatemae": 10,
           "ninki": 0,
           "alcool": 0,
-          "goTo": 568,
+          "goTo": "5a267d8b13e1e",
           "winLose": 0
         },
         {
@@ -126,7 +126,7 @@
       ]
     },
     {
-      "id": 570,
+      "id": "5a2681f24e3f9",
       "description": "That girl at the grocery store looks really cute.",
       "visual": "conbini-girl",
       "probability": 1,
@@ -171,7 +171,7 @@
           "tatemae": 0,
           "ninki": 15,
           "alcool": 0,
-          "goTo": 666,
+          "goTo": 0,
           "winLose":  {
             "win": 572,
             "lose": 573
@@ -249,66 +249,6 @@
           "tatemae": 0,
           "ninki": 5,
           "alcool": 0,
-          "goTo": 0,
-          "winLose": 0
-        }
-      ]
-    },
-    {
-      "id": 800,
-      "description": "You an old stealing food in your conbini.",
-      "visual": "onigiri",
-      "probability": 1,
-      "isTimeline": 1,
-      "isUnique": 0,
-      "need": "conbini",
-      "unlocks": 0,
-      "exits": [
-        {
-          "title": "Pretend you did not see her",
-          "money": 0,
-          "tatemae": 0,
-          "alcool": 0,
-          "ninki": 10,
-          "goTo": 0,
-          "winLose": 0
-        },
-        {
-          "title": "Tell your boss to call the cops",
-          "money": 10000,
-          "tatemae": 10,
-          "alcool": 0,
-          "ninki": 0,
-          "goTo": 0,
-          "winLose": 0
-        }
-      ]
-    },
-    {
-      "id": 802,
-      "description": "You spot a job offer at the conbini next to your place. No experience is required.",
-      "visual": "ramen",
-      "probability": 3,
-      "isTimeline": 1,
-      "isUnique": 0,
-      "need": "noJob",
-      "unlocks": 0,
-      "exits": [
-        {
-          "title": "Ask them to get an interview",
-          "money": 0,
-          "tatemae": 0,
-          "alcool": 0,
-          "ninki": 10,
-          "goTo": 0,
-          "winLose": 0
-        },
-        {
-          "title": "No way I work in a conbini",
-          "money": 10000,
-          "tatemae": 10,
-          "alcool": 0,
-          "ninki": 0,
           "goTo": 0,
           "winLose": 0
         }
@@ -433,69 +373,6 @@
           "ninki": 2,
           "alcool": 0,
           "goTo": 0,
-          "winLose": 0
-        }
-      ]
-    },
-    {
-      "id": 1001,
-      "description": "The land lady complains that you mixed burnable trash with not-burnable trash.",
-      "visual": "conbini-girl",
-      "probability": 8,
-      "isTimeline": 1,
-      "isUnique": 0,
-      "need": 0,
-      "unlocks": 0,
-      "exits": [
-        {
-          "title": "Apologize profusely",
-          "money": 0,
-          "tatemae": 10,
-          "ninki": 0,
-          "alcool": 0,
-          "goTo": 0,
-          "winLose": 0
-        },
-        {
-          "title": "Pretend you don't understand",
-          "money": 0,
-          "tatemae": -10,
-          "ninki": 0,
-          "alcool": 0,
-          "goTo": 0,
-          "winLose": 0
-        }
-      ]
-    },
-    {
-      "id": 1100,
-      "description": "It starts to rain, and your realize that don't have any umbrella.",
-      "visual": "ramen",
-      "probability": 8,
-      "isTimeline": 1,
-      "isUnique": 0,
-      "need": 0,
-      "unlocks": 0,
-      "exits": [
-        {
-          "title": "Steal one in a conbini",
-          "money": 0,
-          "tatemae": -10,
-          "ninki": 5,
-          "alcool": 0,
-          "goTo": 0,
-          "winLose":  {
-            "win": 345326436346,
-            "lose": 777
-          }
-        },
-        {
-          "title": "It's just water. Ignore it.",
-          "money": 0,
-          "tatemae": 10,
-          "ninki": 0,
-          "alcool": 0,
-          "goTo": 999999999,
           "winLose": 0
         }
       ]

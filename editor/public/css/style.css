@@ -98,10 +98,6 @@ ul.tree, ul.tree ul {
      border-left:1px solid rgb(100,100,100);
   }
 
-  a.nodeCreate .dot{
+  a.nodeCreate {
     color: #cc0066;
-  }
-
-  a.nodeEdit .dot {
-    color: #00cc66;
   }

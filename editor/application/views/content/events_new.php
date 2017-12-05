@@ -25,7 +25,10 @@
 
           <div class="col-md-9">
 
-            <input type="hidden" class="form-control" id="event_id" name="event_id" value="<?=uniqid()?>">
+            <div class="form-group">
+              <label for="event_id">Event ID</label>
+              <input class="form-control" id="event_id" name="event_id" value="<?=uniqid()?>" readonly>
+            </div>
 
             <div class="form-group">
               <label for="event_description">Event description</label>
@@ -181,11 +184,14 @@
         for($i = 0; $i < count($exits); $i++) {
 
           // check exits
-          $hasExit = false;
+
           if($exits[$i]['goTo'] != 0) {
+
+            $hasExit = false;
+
             for($j = 0; $j < count($events); $j++) {
               if($events[$j]['id'] == $exits[$i]['goTo']) {
-                echo '<li><a href="#" class="nodeEdit"> <span class="dot">●</span> ' . $exits[$i]['goTo'] . '</a> ';
+                echo '<li><a href="' . base_url('events/edit/'.$exits[$i]['goTo']) .'" class="nodeEdit">' . $exits[$i]['goTo'] . '</a> ';
                 recursiveExits($events[$j]['exits'], $events);
                 echo '</li>';
                 $hasExit = true;
@@ -193,43 +199,50 @@
             }
             if($hasExit == false) {
               // exit node doesn't exist
-              echo '<li><a href="#" class="nodeCreate"> <span class="dot">●</span> ' . $exits[$i]['goTo'] . '</a> ';
+              echo '<li><a href="' . base_url('events/new/'.$exits[$i]['goTo']) .'" class="nodeCreate">' . $exits[$i]['goTo'] . '</a> ';
               echo '</li>';
             }
           }
 
-          // check win
-          $hasWinExit = false;
-          if(isset($exits[$i]['winLose']['win'])) {
+          // check win / lose
+
+          else if(isset($exits[$i]['winLose']['win']) && isset($exits[$i]['winLose']['lose']) ) {
+
+            $hasWinExit = false;
+            $hasLoseExit = false;
+
+            echo '<ul>';
+
             for($j = 0; $j < count($events); $j++) {
               if ($events[$j]['id'] == $exits[$i]['winLose']['win']) {
-                echo '<li><a href="#" class="nodeEdit winLose doWin"> <span class="dot">●</span> ' . $exits[$i]['winLose']['win'] . '</a> ';
+                echo '<li><a href="' . base_url('events/edit/'.$exits[$i]['winLose']['win']) .'" class="nodeEdit winLose doWin"><i class="fa fa-check" aria-hidden="true"></i> ' . $exits[$i]['winLose']['win'] . '</a> ';
                 recursiveExits($events[$j]['exits'], $events);
                 echo '</li>';
                 $hasWinExit = true;
               }
             }
             if($hasWinExit == false) {
-              echo '<li><a href="#" class="nodeCreate winLose doWin"> <span class="dot">●</span> ' . $exits[$i]['winLose']['win'] . '</a> ';
+              echo '<li><a href="' . base_url('events/new/'.$exits[$i]['winLose']['win']) .'" class="nodeCreate winLose doWin"><i class="fa fa-check" aria-hidden="true"></i> ' . $exits[$i]['winLose']['win'] . '</a> ';
               echo '</li>';
             }
-          }
 
-          // check lose
-          $hasLoseExit = false;
-          if(isset($exits[$i]['winLose']['lose'])) {
+            // check lose
+
             for($j = 0; $j < count($events); $j++) {
               if ($events[$j]['id'] == $exits[$i]['winLose']['lose']) {
-                echo '<li><a href="#" class="nodeEdit winLose doLose"> <span class="dot">●</span> ' . $exits[$i]['winLose']['lose'] . '</a> ';
+                echo '<li><a href="' . base_url('events/edit/'.$exits[$i]['winLose']['lose']) .'" class="nodeEdit winLose doLose"><i class="fa fa-times" aria-hidden="true"></i> ' . $exits[$i]['winLose']['lose'] . '</a> ';
                 recursiveExits($events[$j]['exits'], $events);
                 echo '</li>';
                 $hasLoseExit = true;
               }
             }
             if($hasLoseExit == false) {
-              echo '<li><a href="#" class="nodeCreate winLose doLose"> <span class="dot">●</span> ' . $exits[$i]['winLose']['lose'] . '</a> ';
+              echo '<li><a href="' . base_url('events/new/'.$exits[$i]['winLose']['lose']) .'" class="nodeCreate winLose doLose"><i class="fa fa-times" aria-hidden="true"></i> ' . $exits[$i]['winLose']['lose'] . '</a> ';
               echo '</li>';
             }
+
+            echo '</ul>';
+
           }
 
         }
@@ -258,6 +271,7 @@
           }
         }
         */
+
         echo '</ul>';
       };
 
@@ -265,7 +279,7 @@
         echo '<ul class="tree">';
         foreach ($arr as $key){
           if($key['isTimeline'] != 0) {
-            echo '<li><a href="#" class="nodeEdit" title="' . limit_text($key['description'], 9) . '"> <span class="dot">●</span> ' . $key['id'] . '</a> ';
+            echo '<li><a href="' . base_url('events/edit/'.$key['id']) .'" class="nodeEdit" title="' . limit_text($key['description'], 9) . '">' . $key['id'] . '</a> ';
             recursiveExits($key['exits'], $arr);
             echo '</li>';
           }
