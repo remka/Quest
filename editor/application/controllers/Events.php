@@ -3,8 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Events extends CI_Controller {
 
-	public function index()
-	{
+	public function index() {
+
 		$string_a = file_get_contents("../data/events.json");
     $json_a = json_decode($string_a, true);
 
@@ -21,8 +21,15 @@ class Events extends CI_Controller {
 	}
 
 	public function new() {
+
+		$string_a = file_get_contents("../data/events.json");
+    $json_a = json_decode($string_a, true);
+
+		$events = $json_a['events'];
+
 		$data = array(
-			'content' => 'events_new'
+			'content' => 'events_new',
+			'events' => $events
 		);
 		$this->load->view('template',$data);
 	}

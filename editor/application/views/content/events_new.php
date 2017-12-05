@@ -173,8 +173,50 @@
     </div>
 
     <div class="col-md-4">
-      TREE HERE
-    </div>
+      <?php
+
+      function recursiveExits($exits, $events, $count=0) {
+        echo '<ul>';
+        foreach ($exits as $exit){
+          for($i = 0; $i < count($events); $i++) {
+            // check goto
+            if($events[$i]['id'] == $exit['goTo']) {
+              echo '<li><a href="#">' . $events[$i]['id'] . '</a> ';
+              recursiveExits($events[$i]['exits'], $events);
+              echo '</li>';
+            };
+            // check win
+            if ($events[$i]['id'] == $exit['winLose']['win']) {
+              echo '<li><a href="#">' . $events[$i]['id'] . '</a> ';
+              recursiveExits($events[$i]['exits'], $events);
+              echo '</li>';
+            };
+            // check lose
+            if ($events[$i]['id'] == $exit['winLose']['lose']) {
+              echo '<li><a href="#">' . $events[$i]['id'] . '</a> ';
+              recursiveExits($events[$i]['exits'], $events);
+              echo '</li>';
+            };
+          }
+        }
+        echo '</ul>';
+      };
+
+      function plotTree($arr) {
+        echo '<ul class="tree">';
+        foreach ($arr as $key){
+          if($key['isTimeline'] != 0) {
+            echo '<li><a href="#" title="' . limit_text($key['description'], 9) . '">' . $key['id'] . '</a> ';
+            recursiveExits($key['exits'], $arr);
+            echo '</li>';
+          }
+        }
+        echo '</ul>';
+      };
+
+      plotTree($events);
+
+      ?>
 
   </div>
 

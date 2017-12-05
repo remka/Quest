@@ -50,6 +50,25 @@
       ]
     },
     {
+      "id": 666,
+      "description": "Test",
+      "visual": "onigiri",
+      "probability": 0,
+      "isTimeline": 0,
+      "unlocks": 0,
+      "exits": [
+        {
+          "title": "Pop",
+          "money": 0,
+          "tatemae": 0,
+          "ninki": 0,
+          "alcool": 0,
+          "goTo": 0,
+          "winLose": 0
+        }
+      ]
+    },
+    {
       "id": 575,
       "description": "You were out drinking with your friends, and your missed the last train.",
       "visual": "ramen",
@@ -152,7 +171,7 @@
           "tatemae": 0,
           "ninki": 15,
           "alcool": 0,
-          "goTo": 0,
+          "goTo": 666,
           "winLose":  {
             "win": 572,
             "lose": 573
@@ -466,8 +485,8 @@
           "alcool": 0,
           "goTo": 0,
           "winLose":  {
-            "win": 100,
-            "lose": 56
+            "win": 1001,
+            "lose": 1000
           }
         },
         {
