@@ -106,11 +106,13 @@ var visualsModule = (function() {
           money: 0,
           tatemae: 0,
           ninki: 0,
-          alcool: 0
+          alcool: 0,
+          goTo: 0,
+          winLose: 0
         }
       );
 
-      if(event_description == '') {
+      if(event_description.trim() == '') {
         doesValidate = false;
         $event_description.addClass('is-invalid');
       } else if(event_description.length > 160) {
@@ -118,15 +120,15 @@ var visualsModule = (function() {
         $event_description.addClass('is-invalid');
       } else {
         $event_description.removeClass('is-invalid');
-        newEvent.description = event_description;
+        newEvent.description = event_description.trim();
       }
 
-      if(exit_1_title == '') {
+      if(exit_1_title.trim() == '') {
         doesValidate = false;
         $exit_1_title.addClass('is-invalid');
       } else {
         $exit_1_title.removeClass('is-invalid');
-        newEvent.exits[0].title = exit_1_title;
+        newEvent.exits[0].title = exit_1_title.trim();
       }
 
       if(exit_1_money == '') {
@@ -169,13 +171,15 @@ var visualsModule = (function() {
       }
       newEvent.exits[0].tatemae = exit_1_tatemae;
 
-      if(exit_2_title != '') {
+      if(exit_2_title.trim() != '') {
         newEvent.exits.push({
-          title: exit_2_title,
+          title: exit_2_title.trim(),
           money: 0,
           tatemae: 0,
           ninki: 0,
-          alcool: 0
+          alcool: 0,
+          goTo: 0,
+          winLose: 0
         });
       } else {
         newEvent.exits.length = 1;
