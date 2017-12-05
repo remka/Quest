@@ -1,5 +1,12 @@
 <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
 
+  <nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="<?=base_url()?>">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Intro</li>
+    </ol>
+  </nav>
+
   <h1 class="page-header">Intro</h1>
 
   <div class="row">

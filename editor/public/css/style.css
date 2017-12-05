@@ -64,7 +64,30 @@ h1 {
 }
 
 
+/* events list page */
+.valueOk {
+  color: #00cc66;
+  text-decoration: none;
+}
+.valueOk:hover {
+  color: #00cc66;
+  text-decoration: underline;
+}
+.valueError {
+  color: #cc0066;
+  text-decoration: none;
+}
+.valueError:hover {
+  color: #cc0066;
+  text-decoration: underline;
+}
+.valueGrey {
+  color: #ccc;
+}
 
+.prob_value {
+  float:right;
+}
 
 /* visuals edit page */
 .list-visuals {

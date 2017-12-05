@@ -1,11 +1,18 @@
 <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
 
+  <nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="<?=base_url()?>">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Events</li>
+    </ol>
+  </nav>
+
   <h1 class="page-header">Events</h1>
 
   <div class="row">
     <div class="col-md-9"><?=$events_c?> random events</div>
     <div class="col-md-3">
-      <a class="btn btn btn-primary" href="#" role="button">New random event</a>
+      <a class="btn btn btn-primary" href="<?=base_url('events/new')?>" role="button">New random event</a>
     </div>
   </div>
 
@@ -38,7 +45,9 @@
                 </td>
                 <td>
                   <?php foreach ($event['exits'] as $exit):?>
+
                     <?php
+                    // check if exit point exists
                     $is_in_array = false;
                     for ($x = 0; $x < count($events); $x++) {
                       if($events[$x]['id'] == $exit['goTo']) {
@@ -46,11 +55,12 @@
                       };
                     };
                     if ($is_in_array == true && $exit['goTo'] != 0) { ?>
-                      <i class="fa fa-check" aria-hidden="true"></i>
+                      <a href="<?=base_url('events/edit/'.$exit['goTo'])?>" class="valueOk"><?=$exit['goTo']?></a>
                     <?php } else if($is_in_array != true && $exit['goTo'] != 0) { ?>
-                      <i class="fa fa-times" aria-hidden="true"></i>
+                      <a href="<?=base_url('events/edit/'.$exit['goTo'])?>" class="valueError"><?=$exit['goTo']?></a>
+                    <?php } else { ?>
+                      <span class="valueGrey"><?=$exit['goTo']?></span>
                     <?php }; ?>
-                    <?=$exit['goTo']?>
                   <?php endforeach;?>
                 </td>
               </tr>

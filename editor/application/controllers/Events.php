@@ -20,4 +20,11 @@ class Events extends CI_Controller {
     $this->load->view('template',$data);
 	}
 
+	public function new() {
+		$data = array(
+			'content' => 'events_new'
+		);
+		$this->load->view('template',$data);
+	}
+
 }

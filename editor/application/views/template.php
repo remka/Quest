@@ -64,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<a href="<?=base_url('intro')?>" class="nav-link <?php if ($content == 'intro') { echo 'active'; } ;?>">Intro</a>
 						</li>
             <li class="nav-item">
-							<a href="<?=base_url('events')?>" class="nav-link <?php if ($content == 'events') { echo 'active'; } ;?>">Events</a>
+							<a href="<?=base_url('events')?>" class="nav-link <?php if ($content == 'events' || $content == 'events_new') { echo 'active'; } ;?>">Events</a>
 						</li>
             <li class="nav-item">
 							<a href="<?=base_url('visuals')?>" class="nav-link <?php if ($content == 'visuals') { echo 'active'; } ;?>">Visuals</a>
@@ -83,6 +83,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<?php if ($content == 'visuals') { ?>
 		<script src="<?=public_url()?>js/visuals.js"></script>
+	<?php }; ?>
+
+	<?php if ($content == 'events_new') { ?>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+		<script src="<?=public_url()?>js/newevent.js"></script>
 	<?php }; ?>
 
 </body>
