@@ -291,6 +291,8 @@
 
       ?>
 
+      <div class="newObj">&nbsp;</div>
+
   </div>
 
 </main>

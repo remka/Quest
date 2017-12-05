@@ -15,6 +15,7 @@ var visualsModule = (function() {
   var $event_description = $('#event_description');
   var $event_probability = $('#event_probability');
   var $prob_value = $('.prob_value');
+  var $newObj = $('.newObj');
 
   function setSpriteDimensions() {
     var c = Date.now();
@@ -74,6 +75,8 @@ var visualsModule = (function() {
 
       newEvent.id = event_id;
       newEvent.probability = parseInt(event_probability);
+      newEvent.isUnique = 0;
+      newEvent.isTimeline = 1;
 
       if(event_description == '') {
         doesValidate = false;
@@ -93,6 +96,7 @@ var visualsModule = (function() {
       }
 
       console.log(newEvent);
+      $newObj.html(JSON.stringify(newEvent, null, 4));
 
       event.preventDefault();
     });
