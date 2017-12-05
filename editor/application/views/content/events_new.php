@@ -177,6 +177,64 @@
 
       function recursiveExits($exits, $events, $count=0) {
         echo '<ul>';
+
+        for($i = 0; $i < count($exits); $i++) {
+
+          // check exits
+          $hasExit = false;
+          if($exits[$i]['goTo'] != 0) {
+            for($j = 0; $j < count($events); $j++) {
+              if($events[$j]['id'] == $exits[$i]['goTo']) {
+                echo '<li><a href="#" class="nodeEdit"> <span class="dot">●</span> ' . $exits[$i]['goTo'] . '</a> ';
+                recursiveExits($events[$j]['exits'], $events);
+                echo '</li>';
+                $hasExit = true;
+              }
+            }
+            if($hasExit == false) {
+              // exit node doesn't exist
+              echo '<li><a href="#" class="nodeCreate"> <span class="dot">●</span> ' . $exits[$i]['goTo'] . '</a> ';
+              echo '</li>';
+            }
+          }
+
+          // check win
+          $hasWinExit = false;
+          if(isset($exits[$i]['winLose']['win'])) {
+            for($j = 0; $j < count($events); $j++) {
+              if ($events[$j]['id'] == $exits[$i]['winLose']['win']) {
+                echo '<li><a href="#" class="nodeEdit winLose doWin"> <span class="dot">●</span> ' . $exits[$i]['winLose']['win'] . '</a> ';
+                recursiveExits($events[$j]['exits'], $events);
+                echo '</li>';
+                $hasWinExit = true;
+              }
+            }
+            if($hasWinExit == false) {
+              echo '<li><a href="#" class="nodeCreate winLose doWin"> <span class="dot">●</span> ' . $exits[$i]['winLose']['win'] . '</a> ';
+              echo '</li>';
+            }
+          }
+
+          // check lose
+          $hasLoseExit = false;
+          if(isset($exits[$i]['winLose']['lose'])) {
+            for($j = 0; $j < count($events); $j++) {
+              if ($events[$j]['id'] == $exits[$i]['winLose']['lose']) {
+                echo '<li><a href="#" class="nodeEdit winLose doLose"> <span class="dot">●</span> ' . $exits[$i]['winLose']['lose'] . '</a> ';
+                recursiveExits($events[$j]['exits'], $events);
+                echo '</li>';
+                $hasLoseExit = true;
+              }
+            }
+            if($hasLoseExit == false) {
+              echo '<li><a href="#" class="nodeCreate winLose doLose"> <span class="dot">●</span> ' . $exits[$i]['winLose']['lose'] . '</a> ';
+              echo '</li>';
+            }
+          }
+
+        }
+
+        /*
         foreach ($exits as $exit){
           for($i = 0; $i < count($events); $i++) {
             // check goto
@@ -199,6 +257,7 @@
             };
           }
         }
+        */
         echo '</ul>';
       };
 
@@ -206,7 +265,7 @@
         echo '<ul class="tree">';
         foreach ($arr as $key){
           if($key['isTimeline'] != 0) {
-            echo '<li><a href="#" title="' . limit_text($key['description'], 9) . '">' . $key['id'] . '</a> ';
+            echo '<li><a href="#" class="nodeEdit" title="' . limit_text($key['description'], 9) . '"> <span class="dot">●</span> ' . $key['id'] . '</a> ';
             recursiveExits($key['exits'], $arr);
             echo '</li>';
           }

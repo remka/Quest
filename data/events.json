@@ -485,8 +485,8 @@
           "alcool": 0,
           "goTo": 0,
           "winLose":  {
-            "win": 1001,
-            "lose": 1000
+            "win": 345326436346,
+            "lose": 777
           }
         },
         {
@@ -495,7 +495,7 @@
           "tatemae": 10,
           "ninki": 0,
           "alcool": 0,
-          "goTo": 0,
+          "goTo": 999999999,
           "winLose": 0
         }
       ]

@@ -97,3 +97,11 @@ ul.tree, ul.tree ul {
   ul.tree li:last-child:before {
      border-left:1px solid rgb(100,100,100);
   }
+
+  a.nodeCreate .dot{
+    color: #cc0066;
+  }
+
+  a.nodeEdit .dot {
+    color: #00cc66;
+  }
