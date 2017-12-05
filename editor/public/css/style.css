@@ -105,4 +105,8 @@ ul.tree, ul.tree ul {
 .newObj {
   white-space: pre;
   font-family: monospace;
+  color: #666;
+  background: #eee;
+  border-radius: 5px;
+  padding: 1rem;
 }

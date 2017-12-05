@@ -7,7 +7,7 @@
       "probability": 1,
       "isTimeline": 1,
       "isUnique": 0,
-      "need": 0,
+      "needs": 0,
       "unlocks": 0,
       "exits": [
         {
@@ -75,7 +75,7 @@
       "probability": 3,
       "isTimeline": 1,
       "isUnique": 0,
-      "need": 0,
+      "needs": 0,
       "unlocks": 0,
       "exits": [
         {
@@ -115,7 +115,7 @@
           "winLose": 0
         },
         {
-          "title": "I need that money.",
+          "title": "I needs that money.",
           "money": 0,
           "tatemae": -10,
           "ninki": 0,
@@ -132,7 +132,7 @@
       "probability": 1,
       "isTimeline": 1,
       "isUnique": 0,
-      "need": 0,
+      "needs": 0,
       "unlocks": 0,
       "exits": [
         {
@@ -162,7 +162,7 @@
       "probability": 1,
       "isTimeline": 0,
       "isUnique": 0,
-      "need": 0,
+      "needs": 0,
       "unlocks": 0,
       "exits": [
         {
@@ -231,7 +231,7 @@
       "probability": 3,
       "isTimeline": 1,
       "isUnique": 0,
-      "need": "girlNumber",
+      "needs": "girlNumber",
       "unlocks": 0,
       "exits": [
         {
@@ -261,7 +261,7 @@
       "probability": 2,
       "isTimeline": 1,
       "isUnique": 0,
-      "need": 0,
+      "needs": 0,
       "unlocks": 0,
       "exits": [
         {
@@ -354,7 +354,7 @@
       "probability": 9,
       "isTimeline": 1,
       "isUnique": 0,
-      "need": 0,
+      "needs": 0,
       "unlocks": 0,
       "exits": [
         {

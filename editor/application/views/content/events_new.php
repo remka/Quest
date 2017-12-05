@@ -168,7 +168,7 @@
 
         <hr />
 
-        <input class="btn btn-primary btn-lg btn-block" type="submit" value="Create new event">
+        <input class="btn btn-primary btn-lg btn-block" type="submit" value="Create new event object">
 
         <br />
 
@@ -176,6 +176,7 @@
     </div>
 
     <div class="col-md-4">
+
       <?php
 
       function recursiveExits($exits, $events, $count=0) {

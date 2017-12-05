@@ -288,21 +288,21 @@ var questModule = (function() {
     for (var i = 0; i < eventsReference.length; i++) {
       if (eventsReference[i].isTimeline == 1) {
         // Events with no requirements
-        if (eventsReference[i].need == 0) {
+        if (eventsReference[i].needs == 0) {
           var prob = Math.floor(eventsReference[i].probability * probaMulti);
           for (var j = 0; j < prob; j++) {
             randomEvents.push(eventsReference[i]);
           }
         }
         // Events with conbini requirement
-        if (eventsReference[i].need == 'conbini' && userOptions.conbini == true) {
+        if (eventsReference[i].needs == 'conbini' && userOptions.conbini == true) {
           var prob = Math.floor(eventsReference[i].probability * probaMulti);
           for (var j = 0; j < prob; j++) {
             randomEvents.push(eventsReference[i]);
           }
         }
         // Events with noJob requirement
-        if (eventsReference[i].need == 'noJob' && userOptions.noJob == true) {
+        if (eventsReference[i].needs == 'noJob' && userOptions.noJob == true) {
           var prob = Math.floor(eventsReference[i].probability * probaMulti);
           for (var j = 0; j < prob; j++) {
             randomEvents.push(eventsReference[i]);
