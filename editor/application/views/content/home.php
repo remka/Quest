@@ -1,4 +1,4 @@
-<main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+<main role="main" class="col-md-12">
 
   <nav aria-label="breadcrumb" role="navigation">
     <ol class="breadcrumb">
