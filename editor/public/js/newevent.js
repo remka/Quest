@@ -102,10 +102,10 @@ var editorModule = (function() {
 
   function loadVisualsJson() {
     $(function() {
-      console.log('Loading visuals data...');
+      //console.log('Loading visuals data...');
       var c = Date.now();
       $.getJSON('./../../../data/' + dataVisuals + '?c=' + c, function(visualsArray) {
-        console.log('Data visuals loaded.');
+        //console.log('Data visuals loaded.');
         $.each(visualsArray.visuals, function(index, value) {
           visualsReference.push(visualsArray.visuals[index]);
         });
@@ -114,22 +114,22 @@ var editorModule = (function() {
   }
 
   function swapVisual(vName) {
+
     var vWidth = $imgContainer.width();
     var url = './../../../images/' + visualsSprite;
     var currVisual;
+
     for(var i = 0; i < visualsReference.length; i++) {
       if(visualsReference[i].name == vName) {
         currVisual = visualsReference[i];
       }
     }
-    console.log(currVisual.coords);
 
     var numItemsW = spriteDimensions[0] / spriteWidth;
     var numItemsH = spriteDimensions[1] / spriteWidth;
     var bgW = Math.round(numItemsW * visualWidth);
     var bgH = Math.round(numItemsH * visualWidth);
 
-    //$imgContainer.css('background-color', currVisual.bg);
     $imgContainer.css('background-image', 'url(' + url + ')');
     $imgContainer.css('background-size', bgW + 'px ' + bgH + 'px');
 
@@ -138,8 +138,6 @@ var editorModule = (function() {
     $imgContainer.css('background-position', '-' + posX + 'px ' + '-' + posY + 'px');
 
     $('.editVisual span').hide();
-
-    console.log(currVisual.coords[0] + ' | ' + currVisual.coords[1]);
   }
 
   function validateForm() {
@@ -172,7 +170,7 @@ var editorModule = (function() {
 
       newEvent.id = event_id;
       newEvent.description = '';
-      newEvent.visual = event_visual;
+      newEvent.visual = '';
       newEvent.probability = parseInt(event_probability);
       newEvent.isUnique = 0;
       newEvent.isTimeline = 1;
@@ -208,6 +206,14 @@ var editorModule = (function() {
       } else {
         $exit_1_title.removeClass('is-invalid');
         newEvent.exits[0].title = exit_1_title.trim();
+      }
+
+      if(event_visual.trim() == '') {
+        doesValidate = false;
+        $imgContainer.addClass('is-invalid');
+      } else {
+        $imgContainer.removeClass('is-invalid');
+        newEvent.visual = event_visual.trim();
       }
 
       if(exit_1_money == '') {

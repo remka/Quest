@@ -121,6 +121,10 @@ ul.tree, ul.tree ul {
   position: relative;
 }
 
+.imgContainer.is-invalid {
+  border: 1px solid #dc3545;
+}
+
 .imgContainer a,
 .imgContainer a:hover {
   position: absolute;
