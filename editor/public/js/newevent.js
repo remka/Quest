@@ -1,13 +1,20 @@
 var editorModule = (function() {
 
   var visualsSprite = 'sprite-01.png';
+  var dataVisuals = 'visuals.json';
 
   var spriteWidth = 600;
   var spriteEditorWidth = 120;
   var visualWidth;
   var spriteDimensions = [];
 
+  var visualsArray = [];
+  var visualsReference = [];
+
   var showWinLose = [false, false];
+
+  var $event_visual = $('#event_visual');
+  var $imgContainer = $('.imgContainer');
 
   var $eventIllu = $('.list-visuals li');
   var $autoHeight = $('.autoHeight');
@@ -41,6 +48,7 @@ var editorModule = (function() {
   function autoHeight() {
     var itemW = $autoHeight.width();
     $autoHeight.height(itemW);
+    visualWidth  = itemW;
     $(window).resize(function() {
       autoHeight();
     });
@@ -92,6 +100,48 @@ var editorModule = (function() {
     });
   }
 
+  function loadVisualsJson() {
+    $(function() {
+      console.log('Loading visuals data...');
+      var c = Date.now();
+      $.getJSON('./../../../data/' + dataVisuals + '?c=' + c, function(visualsArray) {
+        console.log('Data visuals loaded.');
+        $.each(visualsArray.visuals, function(index, value) {
+          visualsReference.push(visualsArray.visuals[index]);
+        });
+      });
+    });
+  }
+
+  function swapVisual(vName) {
+    var vWidth = $imgContainer.width();
+    var url = './../../../images/' + visualsSprite;
+    var currVisual;
+    for(var i = 0; i < visualsReference.length; i++) {
+      if(visualsReference[i].name == vName) {
+        currVisual = visualsReference[i];
+      }
+    }
+    console.log(currVisual.coords);
+
+    var numItemsW = spriteDimensions[0] / spriteWidth;
+    var numItemsH = spriteDimensions[1] / spriteWidth;
+    var bgW = Math.round(numItemsW * visualWidth);
+    var bgH = Math.round(numItemsH * visualWidth);
+
+    //$imgContainer.css('background-color', currVisual.bg);
+    $imgContainer.css('background-image', 'url(' + url + ')');
+    $imgContainer.css('background-size', bgW + 'px ' + bgH + 'px');
+
+    var posX = currVisual.coords[0] * visualWidth;
+    var posY = currVisual.coords[1] * visualWidth;
+    $imgContainer.css('background-position', '-' + posX + 'px ' + '-' + posY + 'px');
+
+    $('.editVisual span').hide();
+
+    console.log(currVisual.coords[0] + ' | ' + currVisual.coords[1]);
+  }
+
   function validateForm() {
     $('#newEventForm').submit(function( event ) {
 
@@ -100,6 +150,7 @@ var editorModule = (function() {
       var event_id = $event_id.val();
       var event_description = $event_description.val();
       var event_probability = $event_probability.val();
+      var event_visual = $event_visual.val();
 
       var exit_1_title = $exit_1_title.val();
       var exit_1_money = $exit_1_money.val();
@@ -121,7 +172,7 @@ var editorModule = (function() {
 
       newEvent.id = event_id;
       newEvent.description = '';
-      newEvent.visual = '';
+      newEvent.visual = event_visual;
       newEvent.probability = parseInt(event_probability);
       newEvent.isUnique = 0;
       newEvent.isTimeline = 1;
@@ -285,10 +336,20 @@ var editorModule = (function() {
   function attachVisualPicker() {
     $('.editVisual').click(function(event) {
       $('#myNav').css('height', '100%');
+      $('body').css('overflow', 'hidden');
       event.preventDefault();
     });
     $('.closebtn').click(function(event) {
       $('#myNav').css('height', '0%');
+      $('body').css('overflow', 'auto');
+      event.preventDefault();
+    });
+    $('.visual-item').click(function(event) {
+      var visualName = $(this).attr('data-name');
+      $event_visual.val(visualName);
+      swapVisual(visualName);
+      $('#myNav').css('height', '0%');
+      $('body').css('overflow', 'auto');
       event.preventDefault();
     });
   }
@@ -296,14 +357,14 @@ var editorModule = (function() {
 return {
 
   init: function() {
+    loadVisualsJson();
     setSpriteDimensions();
+    autoHeight();
     validateForm();
     updateSliderValue();
     displaySlideVal(1);
-    autoHeight();
     attachVisualPicker();
   }
-
 };
 })();
 

@@ -27,9 +27,15 @@ class Events extends CI_Controller {
 
 		$events = $json_a['events'];
 
+		$string_b = file_get_contents("../data/visuals.json");
+    $json_b = json_decode($string_b, true);
+
+    $visuals = $json_b['visuals'];
+
 		$data = array(
 			'content' => 'events_new',
-			'events' => $events
+			'events' => $events,
+			'visuals' => $visuals
 		);
 		$this->load->view('template',$data);
 	}
