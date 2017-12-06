@@ -86,7 +86,7 @@
             <div class="form-group">
               <label for="event_requires">Event requires</label>
               <select class="form-control" id="event_requires">
-                <option value="0">Nothing</option>
+                <option value="nope">Nothing</option>
                 <option value="girlNumber">girlNumber</option>
               </select>
             </div>
@@ -94,7 +94,7 @@
             <div class="form-group">
               <label for="event_unlocks">Event unlocks</label>
               <select class="form-control" id="event_unlocks">
-                <option value="0">Nothing</option>
+                <option value="nope">Nothing</option>
                 <option value="girlNumber">girlNumber</option>
               </select>
             </div>

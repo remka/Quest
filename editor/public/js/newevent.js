@@ -27,6 +27,8 @@ var editorModule = (function() {
   var $newObj = $('.newObj');
   var $objHolder = $('.objHolder');
   var $descriptionLength = $('.descriptionLength');
+  var $event_requires = $('#event_requires');
+  var $event_unlocks = $('#event_unlocks');
 
   var $exit_1_title = $('#exit_1_title');
   var $exit_1_money = $('#exit_1_money');
@@ -152,6 +154,8 @@ var editorModule = (function() {
       var event_description = $event_description.val();
       var event_probability = $event_probability.val();
       var event_visual = $event_visual.val();
+      var event_requires = $event_requires.val();
+      var event_unlocks = $event_unlocks.val();
 
       var exit_1_title = $exit_1_title.val();
       var exit_1_money = $exit_1_money.val();
@@ -173,15 +177,23 @@ var editorModule = (function() {
 
       var isTimeline = parseInt($('input[name="isTimeline"]:checked').val());
       var isUnique = parseInt($('input[name="isUnique"]:checked').val());
-      
+
+      if (event_requires == 'nope') {
+        event_requires = 0;
+      }
+
+      if (event_unlocks == 'nope') {
+        event_unlocks = 0;
+      }
+
       newEvent.id = event_id;
       newEvent.description = '';
       newEvent.visual = '';
       newEvent.probability = parseInt(event_probability);
       newEvent.isTimeline = isTimeline;
       newEvent.isUnique = isUnique;
-      newEvent.need = 0;
-      newEvent.unlocks = 0;
+      newEvent.need = event_requires;
+      newEvent.unlocks = event_unlocks;
       newEvent.exits = [];
       newEvent.exits.push(
         {
