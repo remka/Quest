@@ -103,6 +103,11 @@ ul.tree, ul.tree ul {
     color: #cc0066;
   }
 
+
+.objHolder {
+  display: none;
+}
+
 .newObj {
   white-space: pre;
   font-family: monospace;
@@ -110,8 +115,7 @@ ul.tree, ul.tree ul {
   background: #eee;
   border-radius: 5px;
   padding: 1rem;
-  display: none;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 .imgContainer {

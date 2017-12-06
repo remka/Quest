@@ -24,6 +24,7 @@ var editorModule = (function() {
   var $event_probability = $('#event_probability');
   var $prob_value = $('.prob_value');
   var $newObj = $('.newObj');
+  var $objHolder = $('.objHolder');
 
   var $exit_1_title = $('#exit_1_title');
   var $exit_1_money = $('#exit_1_money');
@@ -327,6 +328,18 @@ var editorModule = (function() {
         }
         newEvent.exits[1].tatemae = exit_2_tatemae;
 
+        if(exit_2_goto == 'nowhere') {
+          newEvent.exits[1].goTo = 0;
+        } else if(exit_2_goto == 'winlose') {
+          newEvent.exits[1].goTo = 0;
+          newEvent.exits[1].winLose = {
+            win: exit_2_win,
+            lose: exit_2_lose
+          };
+        } else {
+          newEvent.exits[1].goTo = exit_2_goto;
+        }
+
       } else {
         newEvent.exits.length = 1;
       }
@@ -334,10 +347,10 @@ var editorModule = (function() {
       // validation
       if(doesValidate) {
         console.log(newEvent);
-        $newObj.show();
+        $objHolder.show();
         $newObj.html(JSON.stringify(newEvent, null, 4));
       } else {
-        $newObj.hide();
+        $objHolder.hide();
         console.log('Fix errors.');
       }
 

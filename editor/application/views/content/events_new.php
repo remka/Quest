@@ -333,7 +333,11 @@
 
       ?>
 
-      <div class="newObj">&nbsp;</div>
+      <div class="objHolder">
+        <div class="newObj">&nbsp;</div>
+        <input class="btn btn-primary btn-lg btn-block" type="submit" value="Save new object">
+      </div>
+
 
   </div>
 
