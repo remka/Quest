@@ -36,7 +36,8 @@ h1 {
   color: #ccc;
 }
 
-.prob_value {
+.prob_value,
+.descriptionLength {
   float:right;
 }
 

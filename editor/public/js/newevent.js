@@ -7,6 +7,7 @@ var editorModule = (function() {
   var spriteEditorWidth = 120;
   var visualWidth;
   var spriteDimensions = [];
+  var descriptionMaxLength = 160;
 
   var visualsArray = [];
   var visualsReference = [];
@@ -25,6 +26,7 @@ var editorModule = (function() {
   var $prob_value = $('.prob_value');
   var $newObj = $('.newObj');
   var $objHolder = $('.objHolder');
+  var $descriptionLength = $('.descriptionLength');
 
   var $exit_1_title = $('#exit_1_title');
   var $exit_1_money = $('#exit_1_money');
@@ -171,7 +173,7 @@ var editorModule = (function() {
 
       var isTimeline = parseInt($('input[name="isTimeline"]:checked').val());
       var isUnique = parseInt($('input[name="isUnique"]:checked').val());
-
+      
       newEvent.id = event_id;
       newEvent.description = '';
       newEvent.visual = '';
@@ -196,7 +198,7 @@ var editorModule = (function() {
       if(event_description.trim() == '') {
         doesValidate = false;
         $event_description.addClass('is-invalid');
-      } else if(event_description.length > 160) {
+      } else if(event_description.trim().length > 160) {
         doesValidate = false;
         $event_description.addClass('is-invalid');
       } else {
