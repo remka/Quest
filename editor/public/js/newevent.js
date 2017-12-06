@@ -168,12 +168,15 @@ var editorModule = (function() {
       var exit_2_win = $exit_2_win.val();
       var exit_2_lose = $exit_2_lose.val();
 
+      var isTimeline = parseInt($('input[name="isTimeline"]:checked').val());
+      var isUnique = parseInt($('input[name="isUnique"]:checked').val());
+
       newEvent.id = event_id;
       newEvent.description = '';
       newEvent.visual = '';
       newEvent.probability = parseInt(event_probability);
-      newEvent.isUnique = 0;
-      newEvent.isTimeline = 1;
+      newEvent.isTimeline = isTimeline;
+      newEvent.isUnique = isUnique;
       newEvent.need = 0;
       newEvent.unlocks = 0;
       newEvent.exits = [];
@@ -200,20 +203,22 @@ var editorModule = (function() {
         newEvent.description = event_description.trim();
       }
 
-      if(exit_1_title.trim() == '') {
-        doesValidate = false;
-        $exit_1_title.addClass('is-invalid');
-      } else {
-        $exit_1_title.removeClass('is-invalid');
-        newEvent.exits[0].title = exit_1_title.trim();
-      }
-
       if(event_visual.trim() == '') {
         doesValidate = false;
         $imgContainer.addClass('is-invalid');
       } else {
         $imgContainer.removeClass('is-invalid');
         newEvent.visual = event_visual.trim();
+      }
+
+      // exit #2
+
+      if(exit_1_title.trim() == '') {
+        doesValidate = false;
+        $exit_1_title.addClass('is-invalid');
+      } else {
+        $exit_1_title.removeClass('is-invalid');
+        newEvent.exits[0].title = exit_1_title.trim();
       }
 
       if(exit_1_money == '') {
@@ -267,6 +272,8 @@ var editorModule = (function() {
       } else {
         newEvent.exits[0].goTo = exit_1_goto;
       }
+
+      // exit #2
 
       if(exit_2_title.trim() != '') {
 

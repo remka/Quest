@@ -52,13 +52,13 @@
               <div class="col-md-6">
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="isTimeline" id="isTimeline1" value="yes" checked>
+                    <input class="form-check-input" type="radio" name="isTimeline" id="isTimeline1" value="1" checked>
                     Appears in timeline
                   </label>
                 </div>
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="isTimeline" id="isTimeline2" value="no">
+                    <input class="form-check-input" type="radio" name="isTimeline" id="isTimeline2" value="0">
                     Doesn't appear in timeline
                   </label>
                 </div>
@@ -67,13 +67,13 @@
               <div class="col-md-6">
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="isUnique" id="isUnique1" value="yes">
+                    <input class="form-check-input" type="radio" name="isUnique" id="isUnique1" value="1">
                     Is unique
                   </label>
                 </div>
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="isUnique" id="isUnique2" value="no" checked>
+                    <input class="form-check-input" type="radio" name="isUnique" id="isUnique2" value="0" checked>
                     Is not unique
                   </label>
                 </div>
