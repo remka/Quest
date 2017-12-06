@@ -20,7 +20,7 @@ class Events extends CI_Controller {
     $this->load->view('template',$data);
 	}
 
-	public function new() {
+	public function new($event_id = null) {
 
 		$string_a = file_get_contents("../data/events.json");
     $json_a = json_decode($string_a, true);
@@ -35,7 +35,8 @@ class Events extends CI_Controller {
 		$data = array(
 			'content' => 'events_new',
 			'events' => $events,
-			'visuals' => $visuals
+			'visuals' => $visuals,
+			'event_id' => $event_id
 		);
 		$this->load->view('template',$data);
 	}

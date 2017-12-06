@@ -30,7 +30,7 @@
 
             <div class="form-group">
               <label for="event_id">Event ID</label>
-              <input class="form-control" id="event_id" name="event_id" value="<?=uniqid()?>" readonly>
+              <input class="form-control" id="event_id" name="event_id" value="<?=(isset($event_id) ? $event_id : uniqid())?>" readonly>
             </div>
 
             <div class="form-group">
