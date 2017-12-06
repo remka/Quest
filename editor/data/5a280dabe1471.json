@@ -1,0 +1,21 @@
+{
+    "id": "5a280dabe1471",
+    "description": "sdfs",
+    "visual": "ramen",
+    "probability": 1,
+    "isTimeline": 1,
+    "isUnique": 0,
+    "need": 0,
+    "unlocks": 0,
+    "exits": [
+        {
+            "title": "sfsaf",
+            "money": 0,
+            "tatemae": 0,
+            "ninki": 0,
+            "alcool": 0,
+            "goTo": 0,
+            "winLose": 0
+        }
+    ]
+}

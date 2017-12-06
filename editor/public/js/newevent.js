@@ -48,6 +48,8 @@ var editorModule = (function() {
   var $exit_2_win = $('#exit_2_win');
   var $exit_2_lose = $('#exit_2_lose');
 
+  var $create_event = $('#create_event');
+
   var newEvent = {};
 
   function autoHeight() {
@@ -373,6 +375,19 @@ var editorModule = (function() {
     });
   }
 
+  function createEvent() {
+    $create_event.click(function() {
+      var event = newEvent;
+      var jqxhr = $.post('./create', JSON.stringify(event), function(data) {
+        console.log('Success!');
+        console.log(data);
+      })
+      .fail(function() {
+        console.log('Error...');
+      })
+    });
+  }
+
   function attachVisualPicker() {
     $('.editVisual').click(function(event) {
       $('#myNav').css('height', '100%');
@@ -404,6 +419,7 @@ return {
     updateSliderValue();
     displaySlideVal(1);
     attachVisualPicker();
+    createEvent();
   }
 };
 })();

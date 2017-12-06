@@ -1,0 +1,21 @@
+{
+    "id": "5a2811de51b12",
+    "description": "sdfs",
+    "visual": "beer",
+    "probability": 1,
+    "isTimeline": 1,
+    "isUnique": 0,
+    "need": 0,
+    "unlocks": 0,
+    "exits": [
+        {
+            "title": "sdfsdf",
+            "money": 0,
+            "tatemae": 0,
+            "ninki": 0,
+            "alcool": 0,
+            "goTo": 0,
+            "winLose": 0
+        }
+    ]
+}

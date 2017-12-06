@@ -1,0 +1,36 @@
+{
+    "id": "5a280c5643f2b",
+    "description": "sdfsdf",
+    "visual": "beer",
+    "probability": 8,
+    "isTimeline": 1,
+    "isUnique": 0,
+    "need": 0,
+    "unlocks": 0,
+    "exits": [
+        {
+            "title": "asdsad",
+            "money": 0,
+            "tatemae": 0,
+            "ninki": 0,
+            "alcool": 0,
+            "goTo": 0,
+            "winLose": {
+                "win": "5a280c5643f46",
+                "lose": "5a280c5643f51"
+            }
+        },
+        {
+            "title": "sdfsdf",
+            "money": 0,
+            "tatemae": 0,
+            "ninki": 0,
+            "alcool": 0,
+            "goTo": 0,
+            "winLose": {
+                "win": "5a280c5643f68",
+                "lose": "5a280c5643f73"
+            }
+        }
+    ]
+}

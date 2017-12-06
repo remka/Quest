@@ -13,7 +13,8 @@
   <div class="row">
 
     <div class="col-md-8">
-      <form id="newEventForm">
+
+      <?=form_open('event/create', 'id="newEventForm"')?>
 
         <h2>Event</h2>
 
@@ -335,7 +336,7 @@
 
       <div class="objHolder">
         <div class="newObj">&nbsp;</div>
-        <input class="btn btn-primary btn-lg btn-block" type="submit" value="Save new object">
+        <input id="create_event" class="btn btn-primary btn-lg btn-block" type="submit" value="Save new object">
       </div>
 
 

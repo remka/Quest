@@ -41,4 +41,23 @@ class Events extends CI_Controller {
 		$this->load->view('template',$data);
 	}
 
+	public function create() {
+
+		// write single json file
+		$stream_clean = $this->security->xss_clean($this->input->raw_input_stream);
+		$request = json_decode($stream_clean, true);
+		$file_name = $request['id'];
+		$pretty_json = json_encode($request, JSON_PRETTY_PRINT);
+		file_put_contents('data/'.$file_name.'.json', $pretty_json);
+
+    $files_array = array();
+		$dir = './data';
+    $scanned_directory = array_diff(scandir($dir), array('..', '.', '.DS_Store'));
+		$answer = json_encode($scanned_directory);
+		//$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+		header('Content-Type: application/json');
+		//echo json_encode($answer);
+		print_r($answer);
+	}
+
 }
