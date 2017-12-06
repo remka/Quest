@@ -50,7 +50,7 @@
       ]
     },
     {
-      "id": 666,
+      "id": "5a273ef833b0f",
       "description": "Test",
       "visual": "onigiri",
       "probability": 2,
@@ -141,7 +141,7 @@
           "tatemae": 0,
           "ninki": 10,
           "alcool": 0,
-          "goTo": 571,
+          "goTo": "5a273f4731b0a",
           "winLose": 0
         },
         {
@@ -156,7 +156,7 @@
       ]
     },
     {
-      "id": 571,
+      "id": "5a273f4731b0a",
       "description": "She tries to smile, but looks a bit scared too.",
       "visual": "conbini-girl",
       "probability": 1,
@@ -348,7 +348,7 @@
       ]
     },
     {
-      "id": 1000,
+      "id": "5a273f8772ae8",
       "description": "The train you took is super crowded, and an old guy steps on your foot.",
       "visual": "onigiri",
       "probability": 9,

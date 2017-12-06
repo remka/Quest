@@ -192,7 +192,7 @@
 
             for($j = 0; $j < count($events); $j++) {
               if($events[$j]['id'] == $exits[$i]['goTo']) {
-                echo '<li><a href="' . base_url('events/edit/'.$exits[$i]['goTo']) .'" class="nodeEdit">' . $exits[$i]['goTo'] . '</a> ';
+                echo '<li><a href="' . base_url('events/edit/'.$exits[$i]['goTo']) .'" class="nodeEdit"><i class="fa fa-folder" aria-hidden="true"></i></a> ';
                 recursiveExits($events[$j]['exits'], $events);
                 echo '</li>';
                 $hasExit = true;
@@ -200,7 +200,7 @@
             }
             if($hasExit == false) {
               // exit node doesn't exist
-              echo '<li><a href="' . base_url('events/new/'.$exits[$i]['goTo']) .'" class="nodeCreate">' . $exits[$i]['goTo'] . '</a> ';
+              echo '<li><a href="' . base_url('events/new/'.$exits[$i]['goTo']) .'" class="nodeCreate"><i class="fa fa-folder" aria-hidden="true"></i></a> ';
               echo '</li>';
             }
           }
@@ -216,14 +216,14 @@
 
             for($j = 0; $j < count($events); $j++) {
               if ($events[$j]['id'] == $exits[$i]['winLose']['win']) {
-                echo '<li><a href="' . base_url('events/edit/'.$exits[$i]['winLose']['win']) .'" class="nodeEdit winLose doWin"><i class="fa fa-check" aria-hidden="true"></i> ' . $exits[$i]['winLose']['win'] . '</a> ';
+                echo '<li><a href="' . base_url('events/edit/'.$exits[$i]['winLose']['win']) .'" class="nodeEdit winLose doWin"><i class="fa fa-check" aria-hidden="true"></i></a> ';
                 recursiveExits($events[$j]['exits'], $events);
                 echo '</li>';
                 $hasWinExit = true;
               }
             }
             if($hasWinExit == false) {
-              echo '<li><a href="' . base_url('events/new/'.$exits[$i]['winLose']['win']) .'" class="nodeCreate winLose doWin"><i class="fa fa-check" aria-hidden="true"></i> ' . $exits[$i]['winLose']['win'] . '</a> ';
+              echo '<li><a href="' . base_url('events/new/'.$exits[$i]['winLose']['win']) .'" class="nodeCreate winLose doWin"><i class="fa fa-check" aria-hidden="true"></i></a> ';
               echo '</li>';
             }
 
@@ -231,14 +231,14 @@
 
             for($j = 0; $j < count($events); $j++) {
               if ($events[$j]['id'] == $exits[$i]['winLose']['lose']) {
-                echo '<li><a href="' . base_url('events/edit/'.$exits[$i]['winLose']['lose']) .'" class="nodeEdit winLose doLose"><i class="fa fa-times" aria-hidden="true"></i> ' . $exits[$i]['winLose']['lose'] . '</a> ';
+                echo '<li><a href="' . base_url('events/edit/'.$exits[$i]['winLose']['lose']) .'" class="nodeEdit winLose doLose"><i class="fa fa-times" aria-hidden="true"></i></a> ';
                 recursiveExits($events[$j]['exits'], $events);
                 echo '</li>';
                 $hasLoseExit = true;
               }
             }
             if($hasLoseExit == false) {
-              echo '<li><a href="' . base_url('events/new/'.$exits[$i]['winLose']['lose']) .'" class="nodeCreate winLose doLose"><i class="fa fa-times" aria-hidden="true"></i> ' . $exits[$i]['winLose']['lose'] . '</a> ';
+              echo '<li><a href="' . base_url('events/new/'.$exits[$i]['winLose']['lose']) .'" class="nodeCreate winLose doLose"><i class="fa fa-times" aria-hidden="true"></i></a> ';
               echo '</li>';
             }
 
@@ -280,7 +280,7 @@
         echo '<ul class="tree">';
         foreach ($arr as $key){
           if($key['isTimeline'] != 0) {
-            echo '<li><a href="' . base_url('events/edit/'.$key['id']) .'" class="nodeEdit" title="' . limit_text($key['description'], 9) . '">' . $key['id'] . '</a> ';
+            echo '<li><a href="' . base_url('events/edit/'.$key['id']) .'" class="nodeEdit" title="#' . $key['id'] . ': ' . limit_text($key['description'], 9) . '"><i class="fa fa-folder" aria-hidden="true"></i></a> ';
             recursiveExits($key['exits'], $arr);
             echo '</li>';
           }

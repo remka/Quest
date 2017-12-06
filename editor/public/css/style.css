@@ -109,4 +109,6 @@ ul.tree, ul.tree ul {
   background: #eee;
   border-radius: 5px;
   padding: 1rem;
+  display: none;
+  margin-top: 1rem;
 }
