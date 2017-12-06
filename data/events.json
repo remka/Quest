@@ -382,7 +382,7 @@
     {
       "id": 1,
       "description": "After a very long flight, your plane finally lands at Narita airport. You breathe trough immigration, pickup your luggage, and head for the train station.",
-      "visual": "conbini-girl",
+      "visual": "beer",
       "unlocks": 0,
       "exits": [
         {

@@ -14,6 +14,11 @@
       "name": "ramen",
       "bg": "#3a3a3a",
       "coords": [2,0]
+    },
+    {
+      "name": "beer",
+      "bg": "#3a3a3a",
+      "coords": [3,0]
     }
   ]
 }
