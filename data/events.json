@@ -173,8 +173,8 @@
           "alcool": 0,
           "goTo": 0,
           "winLose":  {
-            "win": 572,
-            "lose": 573
+            "win": "5a2786741224e",
+            "lose": "5a27869b14dd1"
           }
         },
         {
@@ -189,7 +189,7 @@
       ]
     },
     {
-      "id": 572,
+      "id": "5a2786741224e",
       "description": "She writes it on a piece of paper and give it to you discretely.",
       "visual": "conbini-girl",
       "isTimeline": 0,
@@ -207,7 +207,7 @@
       ]
     },
     {
-      "id": 573,
+      "id": "5a27869b14dd1",
       "description": "She calls her manager who asks you to leave if you don't want him to call the cops.",
       "visual": "conbini-girl",
       "isTimeline": 0,
@@ -225,7 +225,7 @@
       ]
     },
     {
-      "id": 574,
+      "id": "5a2786efb5620",
       "description": "You decide to contact that girl who gave you her number the other day.",
       "visual": "conbini-girl",
       "probability": 3,
@@ -255,7 +255,7 @@
       ]
     },
     {
-      "id": 900,
+      "id": "5a278741383be",
       "description": "The cops pull you aside to see your ID.",
       "visual": "onigiri",
       "probability": 2,
@@ -270,7 +270,7 @@
           "tatemae": 5,
           "ninki": 0,
           "alcool": 0,
-          "goTo": 901,
+          "goTo": "5a27877342a96",
           "winLose": 0
         },
         {
@@ -279,13 +279,13 @@
           "tatemae": -5,
           "ninki": 5,
           "alcool": 0,
-          "goTo": 902,
+          "goTo": "5a27878829eea",
           "winLose": 0
         }
       ]
     },
     {
-      "id": 901,
+      "id": "5a27877342a96",
       "description": "They now want to see the inside of your bag.",
       "visual": "onigiri",
       "isTimeline": 0,
@@ -297,7 +297,7 @@
           "tatemae": 10,
           "ninki": 0,
           "alcool": 0,
-          "goTo": 903,
+          "goTo": "5a2787a3ccbce",
           "winLose": 0
         },
         {
@@ -306,13 +306,13 @@
           "tatemae": -10,
           "ninki": 5,
           "alcool": 0,
-          "goTo": 902,
+          "goTo": "5a27878829eea",
           "winLose": 0
         }
       ]
     },
     {
-      "id": 902,
+      "id": "5a27878829eea",
       "description": "The cops take you to the police station. They threaten to deport you next time.",
       "visual": "conbini-girl",
       "isTimeline": 0,
@@ -330,7 +330,7 @@
       ]
     },
     {
-      "id": 903,
+      "id": "5a2787a3ccbce",
       "description": "They let you go. For this time...",
       "visual": "onigiri",
       "isTimeline": 0,

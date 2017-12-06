@@ -24,7 +24,8 @@ class Home extends CI_Controller {
       'content' => 'home',
       'events_c' => $events_length,
       'intro_c' => $intro_length,
-      'visuals_c' => $visuals_length
+      'visuals_c' => $visuals_length,
+			'visuals' => $visuals
     );
 
     $this->load->view('template',$data);

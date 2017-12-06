@@ -11,10 +11,16 @@ class Intro extends CI_Controller {
     $intro = $json_a['intro'];
     $intro_length = count($intro);
 
+		$string_b = file_get_contents("../data/visuals.json");
+    $json_b = json_decode($string_b, true);
+
+    $visuals = $json_b['visuals'];
+
     $data = array(
       'content' => 'intro',
       'intro_c' => $intro_length,
-      'intros' => $intro
+      'intros' => $intro,
+			'visuals' => $visuals
     );
 
     $this->load->view('template',$data);
