@@ -20,7 +20,10 @@
         <div class="row">
 
           <div class="col-md-3">
-            dddd
+            <div class="imgContainer autoHeight">
+              <a href="#" class="editVisual"><span>Click to edit</span></a>
+              <input type="hidden" id="event_visual" name="event_visual" value="">
+            </div>
           </div>
 
           <div class="col-md-9">
@@ -41,6 +44,44 @@
               <label for="event_probability">Event probability</label>
               <input type="range" min="1" max="10" value="1" class="form-control" id="event_probability" name="event_probability">
             </div>
+
+            <hr />
+
+            <div class="row">
+
+              <div class="col-md-6">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="isTimeline" id="isTimeline1" value="yes" checked>
+                    Appears in timeline
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="isTimeline" id="isTimeline2" value="no">
+                    Doesn't appear in timeline
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="isUnique" id="isUnique1" value="yes">
+                    Is unique
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="isUnique" id="isUnique2" value="no" checked>
+                    Is not unique
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <hr />
 
             <div class="form-group">
               <label for="event_requires">Event requires</label>

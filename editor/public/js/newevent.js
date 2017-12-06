@@ -1,4 +1,4 @@
-var visualsModule = (function() {
+var editorModule = (function() {
 
   var visualsSprite = 'sprite-01.png';
 
@@ -10,6 +10,7 @@ var visualsModule = (function() {
   var showWinLose = [false, false];
 
   var $eventIllu = $('.list-visuals li');
+  var $autoHeight = $('.autoHeight');
 
   var $event_id = $('#event_id');
   var $event_description = $('#event_description');
@@ -36,6 +37,14 @@ var visualsModule = (function() {
   var $exit_2_lose = $('#exit_2_lose');
 
   var newEvent = {};
+
+  function autoHeight() {
+    var itemW = $autoHeight.width();
+    $autoHeight.height(itemW);
+    $(window).resize(function() {
+      autoHeight();
+    });
+  }
 
   function setSpriteDimensions() {
     var c = Date.now();
@@ -273,6 +282,17 @@ var visualsModule = (function() {
     });
   }
 
+  function attachVisualPicker() {
+    $('.editVisual').click(function(event) {
+      $('#myNav').css('height', '100%');
+      event.preventDefault();
+    });
+    $('.closebtn').click(function(event) {
+      $('#myNav').css('height', '0%');
+      event.preventDefault();
+    });
+  }
+
 return {
 
   init: function() {
@@ -280,11 +300,13 @@ return {
     validateForm();
     updateSliderValue();
     displaySlideVal(1);
+    autoHeight();
+    attachVisualPicker();
   }
 
 };
 })();
 
 $( document ).ready(function() {
-  visualsModule.init();
+  editorModule.init();
 });
