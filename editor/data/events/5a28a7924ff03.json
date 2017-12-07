@@ -1,0 +1,33 @@
+{
+    "id": "5a28a7924ff03",
+    "description": "Nullam eget lacus egestas, bibendum enim id, aliquet neque. Pellentesque id purus diam. Aliquam tincidunt arcu sit amet sapien pretium.",
+    "visual": "onigiri",
+    "probability": 6,
+    "isTimeline": 1,
+    "isUnique": 0,
+    "need": 0,
+    "unlocks": 0,
+    "exits": [
+        {
+            "title": "ddd",
+            "money": 0,
+            "tatemae": 0,
+            "ninki": 0,
+            "alcool": 0,
+            "goTo": "5a28a7924ff0c",
+            "winLose": 0
+        },
+        {
+            "title": "dd",
+            "money": 0,
+            "tatemae": 0,
+            "ninki": 0,
+            "alcool": 0,
+            "goTo": 0,
+            "winLose": {
+                "win": "5a28a7924ff29",
+                "lose": "5a28a7924ff30"
+            }
+        }
+    ]
+}

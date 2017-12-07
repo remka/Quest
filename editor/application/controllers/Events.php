@@ -48,13 +48,24 @@ class Events extends CI_Controller {
 		$request = json_decode($stream_clean, true);
 		$file_name = $request['id'];
 		$pretty_json = json_encode($request, JSON_PRETTY_PRINT);
-		file_put_contents('data/'.$file_name.'.json', $pretty_json);
+		file_put_contents('data/events/'.$file_name.'.json', $pretty_json);
 
+		// build array with json files list
     $files_array = array();
-		$dir = './data';
-    $scanned_directory = array_diff(scandir($dir), array('..', '.', '.DS_Store'));
-		$answer = json_encode($scanned_directory);
-		//$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+		$dir = './data/events';
+		if (is_dir($dir)){
+		  if ($dh = opendir($dir)){
+		    while (($file = readdir($dh)) !== false){
+					if($file != '.' && $file != '..' && $file != '.DS_Store') {
+						array_push($files_array, $file);
+					}
+		    }
+		    closedir($dh);
+		  }
+		};
+
+		//
+		$answer = json_encode($files_array);
 		header('Content-Type: application/json');
 		//echo json_encode($answer);
 		print_r($answer);
